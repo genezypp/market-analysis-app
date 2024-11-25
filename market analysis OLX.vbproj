@@ -133,6 +133,7 @@
     <Content Include="backend\utils\reports.py" />
     <Content Include="backend\utils\security.py" />
     <Content Include="backend\utils\text_analysis.py" />
+    <Content Include="frontend\public\index.html" />
     <Content Include="frontend\src\App.js" />
     <Content Include="frontend\src\components\Dashboard.js" />
     <Content Include="frontend\src\components\DeviceManagement.js" />
