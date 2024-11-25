@@ -1,9 +1,7 @@
-from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
-from db.database import Base
+from sqlalchemy import Column, Integer, String, Boolean, ForeignKey, Float, DateTime
 from sqlalchemy.orm import relationship
 from datetime import datetime
-
-
+from db.database import Base
 
 
 class User(Base):
@@ -29,6 +27,7 @@ class SearchProfile(Base):
 
     user = relationship("User")  # Powi¹zanie z tabel¹ u¿ytkowników
 
+
 class Device(Base):
     __tablename__ = "devices"
     id = Column(Integer, primary_key=True, index=True)
@@ -38,6 +37,7 @@ class Device(Base):
     repair_cost = Column(Float, default=0)
     sale_price = Column(Float, nullable=True)
     margin = Column(Float, default=0)
+
 
 class UserLog(Base):
     __tablename__ = "user_logs"
