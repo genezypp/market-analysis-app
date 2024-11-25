@@ -28,10 +28,10 @@ app.add_middleware(
     allow_origins=["http://localhost:3000"],  # Dostosuj do adresu frontendu
     allow_credentials=True,
     allow_methods=["*"],  # Zezwalaj na wszystkie metody
-    allow_headers=["*"],  # Zezwalaj na wszystkie nag³ówki
+    allow_headers=["*"],  # Zezwalaj na wszystkie nag??wki
 )
 
-# Rejestracja tras (endpointów API)
+# Rejestracja tras (endpoint?w API)
 
 app.include_router(auth.router, prefix="/auth", tags=["Authentication"])
 app.include_router(search_profiles.router, prefix="/profiles", tags=["Search Profiles"])
@@ -40,7 +40,7 @@ app.include_router(notifications.router, prefix="/notifications", tags=["Notific
 app.include_router(devices.router, prefix="/devices", tags=["Device Management"])
 app.include_router(admin.router, prefix="/admin", tags=["Administration"])
 
-# Serwowanie plików statycznych (np. index.html, style.css, JS)
+# Serwowanie plik?w statycznych (np. index.html, style.css, JS)
 static_dir = "frontend/build/static"
 if os.path.exists(static_dir):
     app.mount("/static", StaticFiles(directory=static_dir), name="static")
