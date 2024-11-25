@@ -1,9 +1,11 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
+from fastapi.middleware.cors import CORSMiddleware
 from db.database import Base, engine
 from routes import auth, search_profiles, analysis, notifications, devices, admin
 from services.scheduler import start_scheduler
+import os
 
 # Inicjalizacja bazy danych
 Base.metadata.create_all(bind=engine)
@@ -15,6 +17,15 @@ app = FastAPI(
     version="1.0.0"
 )
 
+# Konfiguracja CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # Dostosuj do adresu frontendu
+    allow_credentials=True,
+    allow_methods=["*"],  # Zezwalaj na wszystkie metody
+    allow_headers=["*"],  # Zezwalaj na wszystkie nag³ówki
+)
+
 # Rejestracja tras (endpointów API)
 app.include_router(auth.router, prefix="/auth", tags=["Authentication"])
 app.include_router(search_profiles.router, prefix="/profiles", tags=["Search Profiles"])
@@ -24,13 +35,21 @@ app.include_router(devices.router, prefix="/devices", tags=["Device Management"]
 app.include_router(admin.router, prefix="/admin", tags=["Administration"])
 
 # Serwowanie plików statycznych (np. index.html, style.css, JS)
-app.mount("/static", StaticFiles(directory="frontend/build/static"), name="static")
+static_dir = "frontend/build/static"
+if os.path.exists(static_dir):
+    app.mount("/static", StaticFiles(directory=static_dir), name="static")
+else:
+    print(f"Warning: Static directory '{static_dir}' not found. Static files may not be served.")
 
 # Endpoint do zwracania pliku HTML (frontendu)
 @app.get("/", response_class=HTMLResponse)
 async def read_index():
-    with open("frontend/build/index.html", "r") as f:
-        return f.read()
+    index_file = "frontend/build/index.html"
+    if os.path.exists(index_file):
+        with open(index_file, "r") as f:
+            return f.read()
+    else:
+        raise HTTPException(status_code=404, detail="Frontend index.html not found")
 
 # Funkcje wywo³ywane przy starcie aplikacji
 @app.on_event("startup")
