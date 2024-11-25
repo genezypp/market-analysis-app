@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35514.174 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "market analysis OLX", "market analysis OLX.vbproj", "{484B46F6-B65B-423D-A1CF-AA963052101D}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "market analysis OLX1", "market analysis OLX1.vbproj", "{484B46F6-B65B-423D-A1CF-AA963052101D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
