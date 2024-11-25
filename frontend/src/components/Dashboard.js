@@ -12,7 +12,7 @@ const Dashboard = () => {
         setItems(response.data);
       })
       .catch(err => {
-        setError('Wyst¹pi³ problem podczas ³adowania danych.');
+        setError('Wystapil problem podczas ladowania danych.');
       });
   }, []);
 

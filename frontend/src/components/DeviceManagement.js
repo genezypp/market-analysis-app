@@ -14,10 +14,10 @@ const DeviceManagement = () => {
             category: deviceCategory
         })
             .then(response => {
-                setMessage('Urz¹dzenie zosta³o dodane!');
+                setMessage('Urzadzenie zostalo dodane!');
             })
             .catch(error => {
-                setMessage('Wyst¹pi³ problem przy dodawaniu urz¹dzenia.');
+                setMessage('Wystapil problem przy dodawaniu urzadzenia.');
             });
     };
 
