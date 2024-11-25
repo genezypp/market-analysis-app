@@ -45,3 +45,16 @@ class UserLog(Base):
     user_id = Column(Integer, ForeignKey("users.id"))
     action = Column(String, nullable=False)
     timestamp = Column(DateTime, default=datetime.utcnow)
+
+
+class Notification(Base):
+    __tablename__ = "notifications"
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"))
+    category = Column(String, nullable=False)
+    min_price = Column(Integer, nullable=True)
+    max_price = Column(Integer, nullable=True)
+    alert_email = Column(String, nullable=False)
+    is_active = Column(Boolean, default=True)  # Powiadomienie aktywne lub nieaktywne
+
+    user = relationship("User")  # Powi¹zanie z tabel¹ u¿ytkowników

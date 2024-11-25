@@ -6,3 +6,5 @@ python-jose
 numpy
 fpdf
 xyz01
+requests
+spacy
