@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{484B46F6-B65B-423D-A1CF-AA963052101D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <StartupObject>
+    </StartupObject>
+    <RootNamespace>market_analysis_OLX</RootNamespace>
+    <AssemblyName>ConsoleApplication</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Console</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".git\config" />
+    <None Include=".git\description" />
+    <None Include=".git\FETCH_HEAD" />
+    <None Include=".git\HEAD" />
+    <None Include=".git\hooks\applypatch-msg.sample" />
+    <None Include=".git\hooks\commit-msg.sample" />
+    <None Include=".git\hooks\fsmonitor-watchman.sample" />
+    <None Include=".git\hooks\post-update.sample" />
+    <None Include=".git\hooks\pre-applypatch.sample" />
+    <None Include=".git\hooks\pre-commit.sample" />
+    <None Include=".git\hooks\pre-merge-commit.sample" />
+    <None Include=".git\hooks\pre-push.sample" />
+    <None Include=".git\hooks\pre-rebase.sample" />
+    <None Include=".git\hooks\pre-receive.sample" />
+    <None Include=".git\hooks\prepare-commit-msg.sample" />
+    <None Include=".git\hooks\push-to-checkout.sample" />
+    <None Include=".git\hooks\sendemail-validate.sample" />
+    <None Include=".git\hooks\update.sample" />
+    <None Include=".git\index" />
+    <None Include=".git\info\exclude" />
+    <None Include=".git\logs\HEAD" />
+    <None Include=".git\logs\refs\heads\main" />
+    <None Include=".git\logs\refs\remotes\origin\HEAD" />
+    <None Include=".git\objects\pack\pack-73eb15f0fe9af62808a70a86cd18ceb99534d220.idx" />
+    <None Include=".git\objects\pack\pack-73eb15f0fe9af62808a70a86cd18ceb99534d220.pack" />
+    <None Include=".git\objects\pack\pack-73eb15f0fe9af62808a70a86cd18ceb99534d220.rev" />
+    <None Include=".git\ORIG_HEAD" />
+    <None Include=".git\packed-refs" />
+    <None Include=".git\refs\heads\main" />
+    <None Include=".git\refs\remotes\origin\HEAD" />
+    <None Include=".vs\market-analysis-app\v17\.wsuo" />
+    <None Include=".vs\market-analysis-app\v17\DocumentLayout.json" />
+    <None Include=".vs\VSWorkspaceState.json" />
+    <None Include="docker\docker-compose.yml" />
+    <None Include="docker\Dockerfile.backend" />
+    <None Include="docker\Dockerfile.frontend" />
+    <None Include="docs\API_DOCS.md" />
+    <None Include="docs\INSTALLATION.md" />
+    <None Include="docs\README.md" />
+    <None Include="frontend\{package.json}" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".git\ms-persist.xml" />
+    <Content Include="backend\config.py" />
+    <Content Include="backend\db\database.py" />
+    <Content Include="backend\db\models.py" />
+    <Content Include="backend\main.py" />
+    <Content Include="backend\requirements.txt" />
+    <Content Include="backend\routes\admin.py" />
+    <Content Include="backend\routes\analysis.py" />
+    <Content Include="backend\routes\auth.py" />
+    <Content Include="backend\routes\devices.py" />
+    <Content Include="backend\routes\notifications.py" />
+    <Content Include="backend\routes\reports.py" />
+    <Content Include="backend\routes\search_profiles.py" />
+    <Content Include="backend\services\notifications.py" />
+    <Content Include="backend\services\scheduler.py" />
+    <Content Include="backend\tests\test_analysis.py" />
+    <Content Include="backend\tests\test_auth.py" />
+    <Content Include="backend\tests\test_devices.py" />
+    <Content Include="backend\tests\test_notifications.py" />
+    <Content Include="backend\utils\admin_stats.py" />
+    <Content Include="backend\utils\data_analysis.py" />
+    <Content Include="backend\utils\notifications.py" />
+    <Content Include="backend\utils\olx_api.py" />
+    <Content Include="backend\utils\reports.py" />
+    <Content Include="backend\utils\security.py" />
+    <Content Include="backend\utils\text_analysis.py" />
+    <Content Include="frontend\src\App.js" />
+    <Content Include="frontend\src\components\Dashboard.js" />
+    <Content Include="frontend\src\components\DeviceManagement.js" />
+    <Content Include="frontend\src\components\LoginForm.js" />
+    <Content Include="frontend\src\components\MarketAnalysis.js" />
+    <Content Include="frontend\src\components\MarketDepth.js" />
+    <Content Include="frontend\src\components\Notifications.js" />
+    <Content Include="frontend\src\components\Reports.js" />
+    <Content Include="frontend\src\components\SearchProfiles.js" />
+    <Content Include="frontend\src\components\TextAnalysis.js" />
+    <Content Include="frontend\src\components\UserLogs.js" />
+    <Content Include="frontend\src\components\UserManagement.js" />
+    <Content Include="frontend\src\index.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".git\objects\info\" />
+    <Folder Include=".git\refs\tags\" />
+    <Folder Include=".vs\market analysis OLX\v17\" />
+    <Folder Include="My Project\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
