@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+
+
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
@@ -15,7 +18,7 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Rejestracja tras (endpointÛw API)
+# Rejestracja tras (endpoint√≥w API)
 app.include_router(auth.router, prefix="/auth", tags=["Authentication"])
 app.include_router(search_profiles.router, prefix="/profiles", tags=["Search Profiles"])
 app.include_router(analysis.router, prefix="/analysis", tags=["Market Analysis"])
@@ -23,8 +26,8 @@ app.include_router(notifications.router, prefix="/notifications", tags=["Notific
 app.include_router(devices.router, prefix="/devices", tags=["Device Management"])
 app.include_router(admin.router, prefix="/admin", tags=["Administration"])
 
-# Serwowanie plikÛw statycznych (np. index.html, style.css, JS)
-app.mount("/static", StaticFiles(directory="frontend/build/static"), name="static")
+# Serwowanie plik√≥w statycznych (np. index.html, style.css, JS)
+#app.mount("/static", StaticFiles(directory="frontend/build/static"), name="static")
 
 # Endpoint do zwracania pliku HTML (frontendu)
 @app.get("/", response_class=HTMLResponse)
@@ -32,10 +35,10 @@ async def read_index():
     with open("frontend/build/index.html", "r") as f:
         return f.read()
 
-# Funkcje wywo≥ywane przy starcie aplikacji
+# Funkcje wywo≈Çywane przy starcie aplikacji
 @app.on_event("startup")
 def on_startup():
-    # Uruchamianie zadaÒ w tle, np. powiadomieÒ
+    # Uruchamianie zada≈Ñ w tle, np. powiadomie≈Ñ
     start_scheduler()
 
 # Prosty endpoint testowy
