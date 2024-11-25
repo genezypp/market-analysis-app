@@ -12,7 +12,7 @@ SMTP_PASSWORD = "your-email-password"
 
 def send_email(recipient, subject, body):
     """
-    Wysy≥a e-mail z powiadomieniem.
+    Wysy≈Ça e-mail z powiadomieniem.
     """
     msg = MIMEText(body)
     msg["Subject"] = subject
@@ -26,7 +26,7 @@ def send_email(recipient, subject, body):
 
 def check_notifications(db: Session = next(get_db())):
     """
-    Sprawdza powiadomienia i wysy≥a alerty dla nowych ofert.
+    Sprawdza powiadomienia i wysy≈Ça alerty dla nowych ofert.
     """
     notifications = db.query(Notification).filter(Notification.is_active == True).all()
 

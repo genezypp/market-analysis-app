@@ -11,7 +11,7 @@ class User(Base):
     email = Column(String, unique=True, index=True)
     hashed_password = Column(String)
     is_active = Column(Boolean, default=True)
-    role = Column(String, default="user")  # Moøliwe role: user, admin
+    role = Column(String, default="user")  # Mo≈ºliwe role: user, admin
 
 
 class SearchProfile(Base):
@@ -23,16 +23,16 @@ class SearchProfile(Base):
     min_price = Column(Integer)
     max_price = Column(Integer)
     location = Column(String)
-    condition = Column(String)  # Moøliwe wartoúci: "new", "used", "damaged"
+    condition = Column(String)  # Mo≈ºliwe warto≈õci: "new", "used", "damaged"
 
-    user = relationship("User")  # Powiπzanie z tabelπ uøytkownikÛw
+    user = relationship("User")  # PowiƒÖzanie z tabelƒÖ u≈ºytkownik√≥w
 
 
 class Device(Base):
     __tablename__ = "devices"
     id = Column(Integer, primary_key=True, index=True)
     model = Column(String, nullable=False)
-    condition = Column(String, nullable=False)  # Moøliwe wartoúci: "new", "used", "damaged"
+    condition = Column(String, nullable=False)  # Mo≈ºliwe warto≈õci: "new", "used", "damaged"
     purchase_price = Column(Float, nullable=False)
     repair_cost = Column(Float, default=0)
     sale_price = Column(Float, nullable=True)
@@ -57,4 +57,4 @@ class Notification(Base):
     alert_email = Column(String, nullable=False)
     is_active = Column(Boolean, default=True)  # Powiadomienie aktywne lub nieaktywne
 
-    user = relationship("User")  # Powiπzanie z tabelπ uøytkownikÛw
+    user = relationship("User")  # PowiƒÖzanie z tabelƒÖ u≈ºytkownik√≥w

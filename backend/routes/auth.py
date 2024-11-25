@@ -19,7 +19,7 @@ class UserRegister(BaseModel):
 @router.post("/register")
 def register(data: UserRegister, db: Session = Depends(get_db)):
     """
-    Rejestracja nowego uøytkownika.
+    Rejestracja nowego u≈ºytkownika.
     """
     hashed_password = hash_password(data.password)
     new_user = User(username=data.username, email=data.email, hashed_password=hashed_password)
@@ -30,7 +30,7 @@ def register(data: UserRegister, db: Session = Depends(get_db)):
 @router.post("/login")
 def login(data: UserLogin, db: Session = Depends(get_db)):
     """
-    Logowanie uøytkownika.
+    Logowanie u≈ºytkownika.
     """
     user = db.query(User).filter(User.email == data.email).first()
     if not user or not verify_password(data.password, user.hashed_password):

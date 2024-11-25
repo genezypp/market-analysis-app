@@ -22,7 +22,7 @@ def get_price_analysis(category: str, min_price: int = None, max_price: int = No
 @router.get("/market-depth")
 def get_market_depth(category: str, min_price: int, max_price: int):
     """
-    Endpoint do analizy g³êbokoœci rynku (oferty w przedziale cenowym).
+    Endpoint do analizy gÅ‚Ä™bokoÅ›ci rynku (oferty w przedziale cenowym).
     """
     ads = fetch_ads(category, min_price, max_price)
     if not ads:
@@ -34,7 +34,7 @@ def get_market_depth(category: str, min_price: int, max_price: int):
 @router.get("/market-depth")
 def get_market_depth_with_analysis(category: str, min_price: int, max_price: int):
     """
-    Endpoint do analizy g³êbokoœci rynku z analiz¹ tekstu og³oszeñ.
+    Endpoint do analizy gÅ‚Ä™bokoÅ›ci rynku z analizÄ… tekstu ogÅ‚oszeÅ„.
     """
     ads = fetch_ads(category, min_price, max_price)
     if not ads:

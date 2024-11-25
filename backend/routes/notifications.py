@@ -24,7 +24,7 @@ class NotificationResponse(NotificationCreate):
 @router.get("/", response_model=List[NotificationResponse])
 def list_notifications(user_id: int, db: Session = Depends(get_db)):
     """
-    Zwraca listê aktywnych powiadomieñ dla u¿ytkownika.
+    Zwraca listÄ™ aktywnych powiadomieÅ„ dla uÅ¼ytkownika.
     """
     return db.query(Notification).filter(Notification.user_id == user_id).all()
 

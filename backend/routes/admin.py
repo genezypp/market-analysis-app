@@ -18,7 +18,7 @@ class UserUpdate(BaseModel):
 @router.get("/users", response_model=List[dict])
 def list_users(db: Session = Depends(get_db)):
     """
-    Zwraca listÍ uøytkownikÛw.
+    Zwraca listƒô u≈ºytkownik√≥w.
     """
     users = db.query(User).all()
     return [
@@ -35,7 +35,7 @@ def list_users(db: Session = Depends(get_db)):
 @router.put("/users/{user_id}")
 def update_user(user_id: int, user_data: UserUpdate, db: Session = Depends(get_db)):
     """
-    Aktualizuje dane uøytkownika.
+    Aktualizuje dane u≈ºytkownika.
     """
     user = db.query(User).filter(User.id == user_id).first()
     if not user:
@@ -50,7 +50,7 @@ def update_user(user_id: int, user_data: UserUpdate, db: Session = Depends(get_d
 @router.delete("/users/{user_id}")
 def delete_user(user_id: int, db: Session = Depends(get_db)):
     """
-    Usuwa uøytkownika.
+    Usuwa u≈ºytkownika.
     """
     user = db.query(User).filter(User.id == user_id).first()
     if not user:
@@ -62,7 +62,7 @@ def delete_user(user_id: int, db: Session = Depends(get_db)):
 @router.get("/logs")
 def get_user_logs(db: Session = Depends(get_db)):
     """
-    Zwraca logi dzia≥aÒ uøytkownikÛw.
+    Zwraca logi dzia≈Ça≈Ñ u≈ºytkownik√≥w.
     """
     logs = db.query(UserLog).all()
     return [

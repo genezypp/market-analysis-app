@@ -5,33 +5,33 @@ from jose import JWTError, jwt
 from datetime import datetime, timedelta
 
 # Konfiguracja JWT
-SECRET_KEY = "supersecretkey"  # ZmieÒ na bezpieczny klucz w úrodowisku produkcyjnym
+SECRET_KEY = "supersecretkey"  # Zmie≈Ñ na bezpieczny klucz w ≈õrodowisku produkcyjnym
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
-# Obs≥uga haszowania hase≥
-SALT = "static_salt"  # Moøesz zmieniÊ na dynamiczne generowanie soli dla kaødego uøytkownika
+# Obs≈Çuga haszowania hase≈Ç
+SALT = "static_salt"  # Mo≈ºesz zmieniƒá na dynamiczne generowanie soli dla ka≈ºdego u≈ºytkownika
 
 
 def hash_password(password: str) -> str:
     """
-    Zwraca zahashowane has≥o za pomocπ SHA-256.
+    Zwraca zahashowane has≈Ço za pomocƒÖ SHA-256.
     """
-    salted_password = f"{SALT}{password}".encode()  # Dodanie soli do has≥a
+    salted_password = f"{SALT}{password}".encode()  # Dodanie soli do has≈Ça
     hashed = hashlib.sha256(salted_password).hexdigest()
     return hashed
 
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     """
-    Weryfikuje has≥o uøytkownika, porÛwnujπc jego hash z zapisanym.
+    Weryfikuje has≈Ço u≈ºytkownika, por√≥wnujƒÖc jego hash z zapisanym.
     """
     return hash_password(plain_password) == hashed_password
 
 
 def create_access_token(data: dict):
     """
-    Tworzy token JWT na podstawie danych uøytkownika.
+    Tworzy token JWT na podstawie danych u≈ºytkownika.
     """
     to_encode = data.copy()
     expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)

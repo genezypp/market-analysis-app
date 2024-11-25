@@ -6,7 +6,7 @@ def calculate_market_statistics(ads: list) -> dict:
     """
     prices = [ad["price"] for ad in ads if ad.get("price") is not None]
 
-    if not prices:  # Jeúli brak danych cenowych
+    if not prices:  # Je≈õli brak danych cenowych
         return {"average": None, "median": None, "distribution": []}
 
     # Obliczenia statystyczne
@@ -18,7 +18,7 @@ def calculate_market_statistics(ads: list) -> dict:
         "average": average,
         "median": median,
         "distribution": {
-            "bins": distribution[1].tolist(),  # Przedzia≥y cenowe
-            "counts": distribution[0].tolist()  # Liczba ofert w kaødym przedziale
+            "bins": distribution[1].tolist(),  # Przedzia≈Çy cenowe
+            "counts": distribution[0].tolist()  # Liczba ofert w ka≈ºdym przedziale
         }
     }

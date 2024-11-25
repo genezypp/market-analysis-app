@@ -25,7 +25,7 @@ class SearchProfileResponse(SearchProfileCreate):
 @router.get("/", response_model=List[SearchProfileResponse])
 def list_profiles(user_id: int, db: Session = Depends(get_db)):
     """
-    Zwraca listê profili wyszukiwania dla danego u¿ytkownika.
+    Zwraca listÄ™ profili wyszukiwania dla danego uÅ¼ytkownika.
     """
     profiles = db.query(SearchProfile).filter(SearchProfile.user_id == user_id).all()
     return profiles
@@ -33,7 +33,7 @@ def list_profiles(user_id: int, db: Session = Depends(get_db)):
 @router.post("/", response_model=SearchProfileResponse)
 def create_profile(profile: SearchProfileCreate, user_id: int, db: Session = Depends(get_db)):
     """
-    Tworzy nowy profil wyszukiwania dla u¿ytkownika.
+    Tworzy nowy profil wyszukiwania dla uÅ¼ytkownika.
     """
     new_profile = SearchProfile(user_id=user_id, **profile.dict())
     db.add(new_profile)
@@ -44,7 +44,7 @@ def create_profile(profile: SearchProfileCreate, user_id: int, db: Session = Dep
 @router.put("/{profile_id}", response_model=SearchProfileResponse)
 def update_profile(profile_id: int, profile: SearchProfileCreate, db: Session = Depends(get_db)):
     """
-    Aktualizuje istniej¹cy profil wyszukiwania.
+    Aktualizuje istniejÄ…cy profil wyszukiwania.
     """
     db_profile = db.query(SearchProfile).filter(SearchProfile.id == profile_id).first()
     if not db_profile:

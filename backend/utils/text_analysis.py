@@ -1,20 +1,20 @@
 import spacy
 
-# Za³aduj model jêzykowy spaCy
+# ZaÅ‚aduj model jÄ™zykowy spaCy
 nlp = spacy.load("en_core_web_sm")
 
-# Lista fraz i ich klasyfikacja problemów
+# Lista fraz i ich klasyfikacja problemÃ³w
 PROBLEM_KEYWORDS = {
-    "cracked screen": "Pêkniêta szybka",
-    "broken": "Uszkodzone urz¹dzenie",
-    "not working": "Nie dzia³a",
+    "cracked screen": "PÄ™kniÄ™ta szybka",
+    "broken": "Uszkodzone urzÄ…dzenie",
+    "not working": "Nie dziaÅ‚a",
     "minor scratches": "Drobne rysy",
     "like new": "Jak nowy"
 }
 
 def analyze_description(description: str) -> str:
     """
-    Analizuje tekst opisu og³oszenia w celu wykrycia problemów technicznych.
+    Analizuje tekst opisu ogÅ‚oszenia w celu wykrycia problemÃ³w technicznych.
     """
     description_lower = description.lower()
     detected_problems = []
@@ -24,6 +24,6 @@ def analyze_description(description: str) -> str:
             detected_problems.append(problem)
 
     if not detected_problems:
-        return "Brak problemów technicznych"
+        return "Brak problemÃ³w technicznych"
 
     return ", ".join(detected_problems)

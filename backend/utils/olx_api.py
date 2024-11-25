@@ -4,7 +4,7 @@ BASE_URL = "https://www.olx.pl/api/v1"
 
 def fetch_ads(category: str, min_price: int = None, max_price: int = None) -> list:
     """
-    Pobiera oferty z OLX API na podstawie kategorii i opcjonalnych filtrów cenowych.
+    Pobiera oferty z OLX API na podstawie kategorii i opcjonalnych filtrÃ³w cenowych.
     """
     params = {"category": category}
     if min_price:

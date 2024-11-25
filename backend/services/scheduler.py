@@ -5,7 +5,7 @@ scheduler = BackgroundScheduler()
 
 def start_scheduler():
     """
-    Uruchamia harmonogram powiadomieñ.
+    Uruchamia harmonogram powiadomieÅ„.
     """
     scheduler.add_job(check_notifications, "interval", minutes=10)  # Co 10 minut
     scheduler.start()

@@ -28,14 +28,14 @@ class DeviceResponse(DeviceCreate):
 @router.get("/", response_model=List[DeviceResponse])
 def list_devices(db: Session = Depends(get_db)):
     """
-    Zwraca listê urz¹dzeñ.
+    Zwraca listÄ™ urzÄ…dzeÅ„.
     """
     return db.query(Device).all()
 
 @router.post("/", response_model=DeviceResponse)
 def add_device(device: DeviceCreate, db: Session = Depends(get_db)):
     """
-    Dodaje nowe urz¹dzenie do bazy.
+    Dodaje nowe urzÄ…dzenie do bazy.
     """
     margin = 0
     if device.sale_price:
@@ -49,7 +49,7 @@ def add_device(device: DeviceCreate, db: Session = Depends(get_db)):
 @router.put("/{device_id}", response_model=DeviceResponse)
 def update_device(device_id: int, device: DeviceCreate, db: Session = Depends(get_db)):
     """
-    Aktualizuje istniej¹ce urz¹dzenie.
+    Aktualizuje istniejÄ…ce urzÄ…dzenie.
     """
     db_device = db.query(Device).filter(Device.id == device_id).first()
     if not db_device:
@@ -65,7 +65,7 @@ def update_device(device_id: int, device: DeviceCreate, db: Session = Depends(ge
 @router.delete("/{device_id}")
 def delete_device(device_id: int, db: Session = Depends(get_db)):
     """
-    Usuwa urz¹dzenie z bazy.
+    Usuwa urzÄ…dzenie z bazy.
     """
     db_device = db.query(Device).filter(Device.id == device_id).first()
     if not db_device:
