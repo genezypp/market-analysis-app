@@ -29,7 +29,7 @@ class SearchProfile(Base):
 
     user = relationship("User")  # Powi¹zanie z tabel¹ u¿ytkowników
 
-    class Device(Base):
+class Device(Base):
     __tablename__ = "devices"
     id = Column(Integer, primary_key=True, index=True)
     model = Column(String, nullable=False)
@@ -39,7 +39,7 @@ class SearchProfile(Base):
     sale_price = Column(Float, nullable=True)
     margin = Column(Float, default=0)
 
-    class UserLog(Base):
+class UserLog(Base):
     __tablename__ = "user_logs"
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey("users.id"))
