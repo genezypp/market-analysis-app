@@ -6,7 +6,7 @@ from db.database import get_db
 from db.models import Device
 from utils.reports import generate_csv_report, generate_pdf_report
 
--
+
 
 router = APIRouter()
 
