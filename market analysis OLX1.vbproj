@@ -107,6 +107,7 @@
     <None Include="docs\API_DOCS.md" />
     <None Include="docs\INSTALLATION.md" />
     <None Include="docs\README.md" />
+    <None Include="frontend\package.json" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
@@ -138,8 +139,10 @@
     <Content Include="backend\utils\text_analysis.py" />
     <Content Include="frontend\public\index.html" />
     <Content Include="frontend\src\App.js" />
+    <Content Include="frontend\src\components\apitests.js" />
     <Content Include="frontend\src\components\Dashboard.js" />
     <Content Include="frontend\src\components\DeviceManagement.js" />
+    <Content Include="frontend\src\components\index.css" />
     <Content Include="frontend\src\components\LoginForm.js" />
     <Content Include="frontend\src\components\MarketAnalysis.js" />
     <Content Include="frontend\src\components\MarketDepth.js" />
