@@ -107,7 +107,6 @@
     <None Include="docs\API_DOCS.md" />
     <None Include="docs\INSTALLATION.md" />
     <None Include="docs\README.md" />
-    <None Include="frontend\{package.json}" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
