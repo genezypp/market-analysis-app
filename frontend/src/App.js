@@ -5,18 +5,18 @@ import DeviceManagement from "./components/DeviceManagement";
 import LoginForm from "./components/LoginForm";
 
 const App = () => {
-  return (
-    <Router>
-      <div className="app-container">
-        <h1>Market Analysis App</h1>
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/device-management" element={<DeviceManagement />} />
-          <Route path="/login" element={<LoginForm />} />
-        </Routes>
-      </div>
-    </Router>
-  );
+    return (
+        <Router>
+            <div className="app-container">
+                <h1>Market Analysis App</h1>
+                <Routes>
+                    <Route path="/" element={<Dashboard />} />
+                    <Route path="/device-management" element={<DeviceManagement />} />
+                    <Route path="/login" element={<LoginForm />} />
+                </Routes>
+            </div>
+        </Router>
+    );
 };
 
 export default App;
